@@ -14,5 +14,7 @@ while True:
 
 print(products)
 
-
+for p in products:
+    print(p[0], '價格是', p[1], '元')
+    
 
