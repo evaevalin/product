@@ -16,5 +16,13 @@ print(products)
 
 for p in products:
     print(p[0], '價格是', p[1], '元')
-    
 
+#txt檔案
+with open('product.txt', 'w') as f:
+    for p in products:
+        f.write(p[0]+','+ p[1] + '\n')
+
+#csv檔案 可以用excel開
+with open('product.csv', 'w') as f:
+    for p in products:
+        f.write(p[0]+','+ p[1] + '\n')
