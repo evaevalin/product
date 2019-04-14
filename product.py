@@ -4,6 +4,7 @@ while True:
     if name == 'q':   # q=quit
        break
     price = input('請輸入商品價格: ')
+    price = int(price)
     # p = []
     # p.append(name)
     # p.append(price)
@@ -18,11 +19,12 @@ for p in products:
     print(p[0], '價格是', p[1], '元')
 
 #txt檔案
-with open('product.txt', 'w') as f:
-    for p in products:
-        f.write(p[0]+','+ p[1] + '\n')
+# with open('product.txt', 'w', encoding = ' utf-8') as f:
+#     for p in products:
+#         f.write(p[0]+','+ str(p[1]) + '\n')
 
 #csv檔案 可以用excel開
-with open('product.csv', 'w') as f:
+with open('product.csv', 'w', encoding = ' utf-8') as f:
+    f.write('商品,價格\n')
     for p in products:
-        f.write(p[0]+','+ p[1] + '\n')
+        f.write(p[0]+','+ str(p[1]) + '\n')
