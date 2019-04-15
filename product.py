@@ -1,4 +1,19 @@
+import os  #operating system
+
 products = []
+if os.path.isfile('products.csv'):
+    print('yeah, 找到檔案囉')
+    with open('product.csv', 'w', encoding = ' utf-8') as f:
+        f.write('商品,價格\n')
+        for p in products:     #每個商品
+            f.write(p[0]+','+ str(p[1]) + '\n')
+else:
+    print('找不到檔案')
+
+#寫入檔案， 可以用excel開
+
+
+
 #讀取檔案
 with open('product.csv','r', encoding = 'utf-8') as f:
     for line in f:
@@ -32,8 +47,4 @@ for p in products:
 #     for p in products:
 #         f.write(p[0]+','+ str(p[1]) + '\n')
 
-#寫入檔案， 可以用excel開
-with open('product.csv', 'w', encoding = ' utf-8') as f:
-    f.write('商品,價格\n')
-    for p in products:     #每個商品
-        f.write(p[0]+','+ str(p[1]) + '\n')
+
